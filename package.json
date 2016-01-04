@@ -1,11 +1,17 @@
 {
-  "name": "Easy Data",
+  "name": "easyData",
   "version": "0.0.1",
   "description": "user friendly UI for updating a database",
   "author": "Neeraj Kohirkar <neerajk1208@gmail.com>",
   "contributors": [
     "Neeraj Kohirkar"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neerajk1208/easyData.git"
+  },
+  "license": "UNLICENSED",
+  "private": true,
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.4.3",
