@@ -1,0 +1,19 @@
+{
+  "name": "Easy Data",
+  "version": "0.0.1",
+  "description": "user friendly UI for updating a database",
+  "author": "Neeraj Kohirkar <neerajk1208@gmail.com>",
+  "contributors": [
+    "Neeraj Kohirkar"
+  ],
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "jwt-simple": "^0.2.0",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.36.0"
+  }
+}
