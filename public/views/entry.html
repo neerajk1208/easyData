@@ -5,7 +5,7 @@
     <input type="text" value="restaurant name"/>
     <input type="text" value="restaurant location"/>
     <input type="text" value="restaurant rating"/>
-    <form name="f2" ng-submit="addEntry()"> 
+    <form name="f2" ng-submit=""> 
       <input id="edit" type="submit" value="Add New Venue!"/> 
     </form>
     <br>
@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-       <tr entry in data.entries> 
+       <tr ng-repeat="entry in data.entries"> 
            <td>
                <form name="f2">
                 <input id="edit" type="submit" name="edit" value="Edit" />

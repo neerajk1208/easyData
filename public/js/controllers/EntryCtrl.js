@@ -4,7 +4,7 @@ angular.module('EntryCtrl', [])
   $scope.tagline = 'Feel free to edit this as required.';
 
   $scope.data = {};
-  $scope.entry = {name: "hello", location: "testing", rating: 45};
+  $scope.data.entries = [{name: "john", "location": "sf", "rating": 45}, {name: "bob", "location": "la", "rating": 32}];
 
   $scope.getAll = function() {
     Entry.get()
@@ -33,6 +33,4 @@ angular.module('EntryCtrl', [])
         $scope.getAll();
       });
   }
-
-  $scope.getAll();
 });
