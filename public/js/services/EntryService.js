@@ -13,6 +13,11 @@ angular.module('EntryService', [])
       return $http.post('/entries', entryData);
     }, 
 
+    update: function(entryData) {
+      console.log(entryData);
+      return $http.put('/entries', entryData);
+    },
+
     delete: function(id) {
       return $http.delete('/entries/' + id);
     }

@@ -2,9 +2,9 @@
     <h1>Venues</h1>
 
     <p>{{ tagline }}</p>
-    <input class="post" id="name" type="text" name = "name"value="Name" ng-model="search" placeholder='filter'/>
-    <input class="post" id="location" type="text" name = "location" value="Location"/>
-    <input class="post" id="rating" type="text" name = "rating" value="Rating"/>
+    <input class="post" id="name" type="text" name = "name" value="Name" ng-model="search" placeholder='name'/>
+    <input class="post" id="location" type="text" name = "location" value="Location" placeholder='location'/>
+    <input class="post" id="rating" type="text" name = "rating" value="Rating" placeholder='rating'/>
     <br>
     <br>
     <form name="f2" ng-submit="addEntry()"> 
@@ -22,18 +22,18 @@
        <tr ng-repeat="entry in data.entries | filter:search"> 
            <td>
                <form name="f2" ng-submit="updateEntry()">
-                <input class="post-button" id="edit" type="submit" name="edit" value="Edit" />
+                <input class="post-button" id="edit" type="submit" name="edit" value="Save" />
                 <input class="post-button" id="delete" type="submit" name="delete" value="X"/>
                </form>
            </td>
             <td class="attributes">
-               {{entry.name}} 
+               <input class="attr" type="text" value="{{entry.name}}" name="currentName"/>
            </td>
            <td class="attributes">
-               {{entry.location}} 
+               <input class="attr" type="text" value="{{entry.location}}" name="currentLocation"/>
            </td>
            <td class="attributes">
-              {{entry.rating}}
+               <input class="attr" type="text" value="{{entry.rating}}" name="currentRating"/>
             </td>
       </tr>
    </tbody>

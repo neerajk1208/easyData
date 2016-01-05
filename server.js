@@ -69,6 +69,9 @@ app.post('/entries', function(req, res) {
   });
 });
 
+app.put('/entries', function(req, res) {
+  console.log('this is the request.body', req.body);
+})
 
 
 

@@ -52,6 +52,9 @@ th {
 }
 
 .attributes {
-  font-size: 25px;
   padding-right: 20px;
+}
+
+.attr {
+  font-size: 15px;
 }

@@ -48,5 +48,25 @@ angular.module('EntryCtrl', [])
       });
   }
 
+  $scope.updateEntry = function() {
+    var temp = {
+      name: this.entry.value,
+      location: this.entry.value, 
+      rating: this.entry.value
+    }
+    console.log("this is", this);
+
+    var testing = document.getElementsByName("rating")[0].value
+
+    Entry.update(temp)
+      .then(function() {
+        cnsole.log('success in updating entry');
+        $scope.getAll();
+      })
+      .catch(function(error) {
+        console.log('there was an error with the update', error);
+      });
+  }
+
   $scope.getAll();
 });
