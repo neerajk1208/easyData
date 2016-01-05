@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = function(app) {
 
   // server routes ===========================================================
@@ -5,8 +7,8 @@ module.exports = function(app) {
   // authentication routes
   // frontend routes =========================================================
   // route to handle all angular requests
-  app.get('*', function(req, res) {
-    res.sendfile('../public/index.html');
-  });
+  // app.get('*', function(req, res) {
+  //   res.sendfile('../public/index.html');
+  // });
 
 };

@@ -1,10 +1,9 @@
-var mongoose = require('mongoose');
-var crypto = require('crypto');
+// var mongoose = require('mongoose');
 
-var EntrySchema = new mongoose.Schema({
-  name: String, 
-  location: String, 
-  rating: Number
-});
+// var EntrySchema = new mongoose.Schema({
+//   name: {type: String, unique: true}, 
+//   location: String, 
+//   rating: Number
+// });
 
-module.exports = mongoose.model('Entry', EntrySchema);
+// module.exports = mongoose.model('Entry', EntrySchema);
