@@ -16,8 +16,14 @@ module.exports = {
     });
   }, 
 
+  test: function() {
+    console.log('hello');
+  },
+
   newEntry: function(req, res, next) {
     var name = req.body.name;
+    var location = req.body.location;
+    var rating = req.body.rating;
     findEntry({name: name})
     .then(function(match) {
       if (match) {
@@ -28,9 +34,9 @@ module.exports = {
     .then(function(name) {
       if (name) {
         var newEntry = {
-          name: 'hello', 
-          location: 'testing', 
-          rating: 45
+          name: name, 
+          location: location, 
+          rating: rating
         };
         return createEntry(newEntry);
       }

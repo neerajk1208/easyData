@@ -5,10 +5,11 @@ angular.module('EntryService', [])
     //call to get all entries
 
     get: function() {
-      return $http.get('/entries');
+      return $http.get('/api/entries/');
     }, 
 
     create: function(entryData) {
+      console.log(entryData);
       return $http.post('/entries', entryData);
     }, 
 

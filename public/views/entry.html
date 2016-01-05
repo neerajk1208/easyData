@@ -2,11 +2,13 @@
     <h1>Venues</h1>
 
     <p>{{ tagline }}</p>
-    <input type="text" value="restaurant name"/>
-    <input type="text" value="restaurant location"/>
-    <input type="text" value="restaurant rating"/>
-    <form name="f2" ng-submit=""> 
-      <input id="edit" type="submit" value="Add New Venue!"/> 
+    <input class="post" id="name" type="text" name = "name"value="Name"/>
+    <input class="post" id="location" type="text" name = "location" value="Location"/>
+    <input class="post" id="rating" type="text" name = "rating" value="Rating"/>
+    <br>
+    <br>
+    <form name="f2" ng-submit="addEntry()"> 
+      <input class="post-button" id="edit" type="submit" value="Add New Venue!"/> 
     </form>
     <br>
     <br>
@@ -19,17 +21,18 @@
     <tbody>
        <tr ng-repeat="entry in data.entries"> 
            <td>
-               <form name="f2">
-                <input id="edit" type="submit" name="edit" value="Edit" />
+               <form name="f2" ng-submit="updateEntry()">
+                <input class="post-button" id="edit" type="submit" name="edit" value="Edit" />
+                <input class="post-button" id="delete" type="submit" name="delete" value="X"/>
                </form>
            </td>
-            <td class="testing1">
+            <td class="attributes">
                {{entry.name}} 
            </td>
-           <td class="testing2">
+           <td class="attributes">
                {{entry.location}} 
            </td>
-           <td class="testing3">
+           <td class="attributes">
               {{entry.rating}}
             </td>
       </tr>

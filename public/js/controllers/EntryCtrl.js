@@ -4,7 +4,7 @@ angular.module('EntryCtrl', [])
   $scope.tagline = 'Feel free to edit this as required.';
 
   $scope.data = {};
-  $scope.data.entries = [{name: "john", "location": "sf", "rating": 45}, {name: "bob", "location": "la", "rating": 32}];
+  $scope.data.entries = [];
 
   $scope.getAll = function() {
     Entry.get()
@@ -16,7 +16,17 @@ angular.module('EntryCtrl', [])
 
   $scope.addEntry = function() {
     //on save
-    Entry.create($scope.entry)
+    
+    var temp = {
+      name: document.getElementsByName("name")[0].value, 
+      location: document.getElementsByName("location")[0].value, 
+      rating: document.getElementsByName("rating")[0].value
+    };
+
+
+    $scope.data.entries.push(temp);
+
+    Entry.create(temp)
     .then(function() {
       console.log('success in adding entry');
       $scope.getAll();
@@ -33,4 +43,6 @@ angular.module('EntryCtrl', [])
         $scope.getAll();
       });
   }
+
+  $scope.getAll();
 });
