@@ -1,0 +1,38 @@
+<div ng-controller="EntryController">
+    <h1>Venues</h1>
+
+    <p>{{ tagline }}</p>
+    <input type="text" value="restaurant name"/>
+    <input type="text" value="restaurant location"/>
+    <input type="text" value="restaurant rating"/>
+    <form name="f2" ng-submit="addEntry()"> 
+      <input id="edit" type="submit" value="Add New Venue!"/> 
+    </form>
+    <br>
+    <br>
+    <table>
+      <thead> 
+      <tr>
+        <th> List of Venues </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr entry in data.entries> 
+           <td>
+               <form name="f2">
+                <input id="edit" type="submit" name="edit" value="Edit" />
+               </form>
+           </td>
+            <td class="testing1">
+               {{entry.name}} 
+           </td>
+           <td class="testing2">
+               {{entry.location}} 
+           </td>
+           <td class="testing3">
+              {{entry.rating}}
+            </td>
+      </tr>
+   </tbody>
+    </table>
+</div>
