@@ -11,7 +11,11 @@ angular.module('EntryCtrl', [])
       .then(function(entries) {
         $scope.data.entries = entries.data; 
         console.log('succeess');
+        document.getElementsByName("name")[0].value = '';
+        document.getElementsByName("location")[0].value = '';
+        document.getElementsByName("rating")[0].value = '';
       });
+
   }
 
   $scope.addEntry = function() {

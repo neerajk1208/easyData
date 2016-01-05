@@ -2,7 +2,7 @@
     <h1>Venues</h1>
 
     <p>{{ tagline }}</p>
-    <input class="post" id="name" type="text" name = "name"value="Name"/>
+    <input class="post" id="name" type="text" name = "name"value="Name" ng-model="search" placeholder='filter'/>
     <input class="post" id="location" type="text" name = "location" value="Location"/>
     <input class="post" id="rating" type="text" name = "rating" value="Rating"/>
     <br>
@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-       <tr ng-repeat="entry in data.entries"> 
+       <tr ng-repeat="entry in data.entries | filter:search"> 
            <td>
                <form name="f2" ng-submit="updateEntry()">
                 <input class="post-button" id="edit" type="submit" name="edit" value="Edit" />
