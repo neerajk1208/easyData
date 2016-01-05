@@ -11,6 +11,7 @@ angular.module('EntryCtrl', [])
       .then(function(entries) {
         $scope.data.entries = entries; 
         console.log('succeess');
+        console.log(entries);
       });
   }
 

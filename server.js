@@ -6,9 +6,11 @@ var bodyParser = require('body-parser');
 // var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 var entriesController = require('./server/entryController');
 
 var Entry = mongoose.model('Entry', new Schema({
+  id: ObjectId,
   name: {type: String, unique: true}, 
   location: String, 
   rating: Number
@@ -38,20 +40,30 @@ require('./app/routes')(app);
 
 //Start the app to listen at the port
 
-// app.get('/entries', entriesController.allEntries);
+app.get('/entries', function(req, res) {
+  Entry.find(function(err, data) {
+    console.log(data);
+    res.send(data);
+  });
+});
 //app.post('/entries', entriesController.newEntry);
 
 app.post('/entries', function(req, res) {
+  console.log("This is the request.body, line 47", req.body)
   var entry = new Entry({
+
     name: req.body.name, 
     location: req.body.location, 
     rating: req.body.rating
   });
+  console.log(entry);
 
   entry.save(function(err) {
     if (err) {
+      console.log("I am here line 57", err);
       if (err.code === 11000) {
         error = "This is a duplicate name!";
+        console.log(err);
       }
     }
   });
