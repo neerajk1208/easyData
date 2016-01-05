@@ -9,9 +9,8 @@ angular.module('EntryCtrl', [])
   $scope.getAll = function() {
     Entry.get()
       .then(function(entries) {
-        $scope.data.entries = entries; 
+        $scope.data.entries = entries.data; 
         console.log('succeess');
-        console.log(entries);
       });
   }
 
