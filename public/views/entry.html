@@ -1,25 +1,26 @@
 <div ng-controller="EntryController">
-    <h1>Venues</h1>
+    <h1>List of Restaurants</h1>
 
-    <p>{{ tagline }}</p>
-    <input class="post" id="name" type="text" name = "name" value="Name" ng-model="search" placeholder='name'/>
-    {{search}}
+    <p class="description">{{ tagline }}</p>
+    <br>
+    <br>
+    <input class="post center" id="name" type="text" name = "name" value="Name" ng-model="search" placeholder='name'/>
     <input class="post" id="location" type="text" name = "location" value="Location" placeholder='location'/>
     <input class="post" id="rating" type="text" name = "rating" value="Rating" placeholder='rating'/>
     <br>
     <br>
-    <form name="f2" ng-submit="addEntry()"> 
+    <form class="addButton" name="f2" ng-submit="addEntry()"> 
       <input class="post-button" id="edit" type="submit" value="Add New Venue!"/> 
     </form>
     <br>
     <br>
-    <div> List of venues 
+    <div> 
       <div ng-repeat="entry in data.entries | filter:search">
         <form  name='f2' ng-submit='updateEntry()'>
-          <input type="submit" value="save"/>
-          <input  value="{{entry.name}}"/>
-          <input  value="{{entry.location}}"/>
-          <input value="{{entry.rating}}"/>
+          <input class="saveButton" type="submit" value="save"/>
+          <input class="record" value="{{entry.name}}"/>
+          <input class="record" value="{{entry.location}}"/>
+          <input class="record" value="{{entry.rating}}"/>
         </form>
       </div>
     </div>

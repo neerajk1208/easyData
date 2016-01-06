@@ -10,10 +10,18 @@ body {
   text-decoration: none;
 }
 
+.homeHeader {
+  margin-top: 150px;
+}
 h1 {
   font-size: 45px;
+  text-align: center;
 }
 
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
 .hello {
   color: red;
 }
@@ -57,4 +65,39 @@ th {
 
 .attr {
   font-size: 15px;
+}
+
+.saveButton {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.saveButton:hover {
+  background-color: blue;
+  color: white;
+}
+.record {
+  font-size: 15px;
+}
+
+.record:hover {
+  font-style: italic;
+}
+
+.center {
+  margin-left: 220px;
+}
+
+.description {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+}
+
+
+.addButton {
+  margin-left: 495px;
+
 }

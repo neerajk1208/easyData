@@ -1,7 +1,7 @@
 angular.module('EntryCtrl', [])
 
 .controller('EntryController', function($scope, Entry) {
-  $scope.tagline = 'Feel free to edit this as required.';
+  $scope.tagline = "Add in a restaurant, and we'll update it in the database!";
   $scope.data = {};
   $scope.data.entries = [];
 
