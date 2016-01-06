@@ -3,6 +3,7 @@
 
     <p>{{ tagline }}</p>
     <input class="post" id="name" type="text" name = "name" value="Name" ng-model="search" placeholder='name'/>
+    {{search}}
     <input class="post" id="location" type="text" name = "location" value="Location" placeholder='location'/>
     <input class="post" id="rating" type="text" name = "rating" value="Rating" placeholder='rating'/>
     <br>
@@ -12,6 +13,20 @@
     </form>
     <br>
     <br>
+    <div> List of venues 
+      <div ng-repeat="entry in data.entries | filter:search">
+        <form  name='f2' ng-submit='updateEntry()'>
+          <input type="submit" value="save"/>
+          <input  value="{{entry.name}}"/>
+          <input  value="{{entry.location}}"/>
+          <input value="{{entry.rating}}"/>
+        </form>
+      </div>
+    </div>
+
+
+<!--
+
     <table>
       <thead> 
       <tr>
@@ -21,7 +36,7 @@
     <tbody>
        <tr ng-repeat="entry in data.entries | filter:search"> 
            <td>
-               <form name="f2" ng-submit="updateEntry()">
+               <form name="f2">
                 <input class="post-button" id="edit" type="submit" name="edit" value="Save" />
                 <input class="post-button" id="delete" type="submit" name="delete" value="X"/>
                </form>
@@ -38,4 +53,6 @@
       </tr>
    </tbody>
     </table>
+
+  -->
 </div>

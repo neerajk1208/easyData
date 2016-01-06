@@ -2,7 +2,6 @@ angular.module('EntryCtrl', [])
 
 .controller('EntryController', function($scope, Entry) {
   $scope.tagline = 'Feel free to edit this as required.';
-
   $scope.data = {};
   $scope.data.entries = [];
 
@@ -11,11 +10,17 @@ angular.module('EntryCtrl', [])
       .then(function(entries) {
         $scope.data.entries = entries.data; 
         console.log('succeess');
+
         document.getElementsByName("name")[0].value = '';
         document.getElementsByName("location")[0].value = '';
         document.getElementsByName("rating")[0].value = '';
+        $scope.search = '';
       });
 
+  }
+
+  $scope.updateIt = function() {
+    console.log('hello');
   }
 
   $scope.addEntry = function() {
@@ -50,17 +55,14 @@ angular.module('EntryCtrl', [])
 
   $scope.updateEntry = function() {
     var temp = {
-      name: this.entry.value,
-      location: this.entry.value, 
-      rating: this.entry.value
+      name: this.entry.name,
+      location: this.entry.location, 
+      rating: this.entry.rating
     }
-    console.log("this is", this);
-
-    var testing = document.getElementsByName("rating")[0].value
 
     Entry.update(temp)
       .then(function() {
-        cnsole.log('success in updating entry');
+        console.log('success in updating entry');
         $scope.getAll();
       })
       .catch(function(error) {
