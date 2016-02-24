@@ -16,11 +16,12 @@
     <br>
     <div> 
       <div ng-repeat="entry in data.entries | filter:search">
-        <form  name='f2' ng-submit='updateEntry()'>
-          <input class="saveButton" type="submit" value="save"/>
-          <input class="record" value="{{entry.name}}"/>
-          <input class="record" value="{{entry.location}}"/>
-          <input class="record" value="{{entry.rating}}"/>
+        <form ng-model='inputs' ng-submit="deleteEntry(entry._id)">
+          <input class="saveButton" type="submit" value="remove"/>
+          <span editable-text="entry._id"></span>
+          <span editable-text="entry.name" on-change="validate(value, entry._id, entry.location, entry.rating)"></span>
+          <span editable-text="entry.location" on-change="validate(value)"></span>
+          <span editable-text="entry.rating" on-change="validate(value)"></span>
         </form>
       </div>
     </div>

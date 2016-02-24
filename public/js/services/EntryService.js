@@ -14,12 +14,12 @@ angular.module('EntryService', [])
     }, 
 
     update: function(entryData) {
-      console.log(entryData);
       return $http.put('/entries', entryData);
     },
 
     delete: function(id) {
-      return $http.delete('/entries/' + id);
+      id = id.id;
+      return $http.delete('/entries/' + id.toString());
     }
   }
 }]);

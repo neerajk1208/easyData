@@ -42,7 +42,7 @@ require('./app/routes')(app);
 
 app.get('/entries', function(req, res) {
   Entry.find(function(err, data) {
-    console.log(data);
+    console.log("here is my data", data);
     res.send(data);
   });
 });
@@ -70,7 +70,35 @@ app.post('/entries', function(req, res) {
 });
 
 app.put('/entries', function(req, res) {
-  console.log('this is the request.body', req.body);
+  var body = req.body;
+  console.log("check out the body", body);
+  Entry.findOne({'_id': body._id}, function(err, entry) {
+    entry.name = body.name;
+    entry.location = body.location;
+    entry.rating = body.rating;
+    entry.save(function(err) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(entry);
+      }
+    })
+  })
+});
+
+app.delete('/entries/:id', function(req, res) {
+  var id = req.params.id;
+  console.log(id);
+
+  Entry.findOne({_id: id}, function(err, entry) {
+    entry.remove(function(err, removed) {
+      res.send(removed);
+    })
+  })
+  
+  // console.log(id);
+
+
 })
 
 
